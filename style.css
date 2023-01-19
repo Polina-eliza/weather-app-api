@@ -7,7 +7,7 @@
 
 :root {
     --body-color: #dadada;
-    --sidebar-color:  #fafafa;
+    --sidebar-color:  #9fc5d8;
     --main-color:  #f3f1f1;
 }
 
@@ -289,4 +289,15 @@ a {
     display: flex;
     justify-content: center;
     margin-top: 60px;     
+}
+
+.author {
+  font-weight: 600;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.author__link {
+  color: #68b4da;
 }

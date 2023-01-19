@@ -29,9 +29,7 @@ function showWeather(response) {
 
     document.querySelector("#feels-like").innerHTML = `Feels like: ${Math.round(
         response.data.main.feels_like)}`;
-
-
-        document.querySelector("#Visibility").innerHTML = `${response.data.visibility/1000}km`;
+    document.querySelector("#Visibility").innerHTML = `${response.data.visibility/1000}km`;
     document.querySelector("#Pressure").innerHTML = `${Math.round(response.data.main.pressure)}`;
 }
 
