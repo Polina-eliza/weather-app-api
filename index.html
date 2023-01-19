@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    
+</head>
+<body>
+    <div class="layout__container">
+        <div class="sidebar">
+            <div class="sidebar__container">
+                <form class="input__form" id="search-form">
+                    <input id="searchQueryInput" type="text" name="searchQueryInput" placeholder="Search for places" value="" >
+                    <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit">
+                        <img class="input__img" src="icons/icons8-search-50.png" alt="">
+                    </button>
+                </form>
+                <img class="main__img" src="icons/Group 4.png" alt="">
+                <h1 class="main__temperature" id="temperature" >12°C</h1>
+                <h2 class="main__city" id="city">Rome</h2>
+                <div class="current__data">
+                    <p class="current__day">Monday,</p>
+                    <p class="current__time">16:00</p>
+                </div>
+                <hr>
+                <h2 class="weather__descr" id="description">Cloudy</h2>
+                <div class="weather__container">
+                    <img class="weather__img" src="icons/icons8-temperature-64.png" alt="">
+                    <div class="sidebar__subheading" id="feels-like"><span class="sidebar__span" >Feels like:</span> 10°C</div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="main">
+            <div class="main__container">
+                <div class="header__container">
+                    <div class="main__subheading">Week</div>
+                    <div class="button__wrapper">
+                        <button class="btn__degrees">
+                            <a class="cel" href="#" id="celsium-link">°C</a>
+                        </button>
+                        <button class="btn__degrees btn__degrees-f">
+                            <a class="fah" href="#" id="fahrenheit-link" >°F</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="week__container">
+                    <div class="day__wrapper">
+                        <div class="day">Mon</div>
+                        <img class="week__img" src="icons/sun.png" alt="sunny">
+                        <div class="degrees">12°</div>
+                    </div>
+                    <div class="day__wrapper">
+                        <div class="day">Tue</div>
+                        <img class="week__img" src="icons/sun.png" alt="sunny">
+                        <div class="degrees">14°</div>
+                    </div>
+                    <div class="day__wrapper">
+                        <div class="day">Wed</div>
+                        <img class="week__img" src="icons/clouds.png" alt="cloudy">
+                        <div class="degrees">10°</div>
+                    </div>
+                    <div class="day__wrapper">
+                        <div class="day">Thu</div>
+                        <img class="week__img" src="icons/bolt-isolated 2.png" alt="rainy">
+                        <div class="degrees">12°</div>
+                    </div>
+                    <div class="day__wrapper">
+                        <div class="day">Fri</div>
+                        <img class="week__img" src="icons/bolt-isolated 2.png" alt="rainy">
+                        <div class="degrees">14°</div>
+                    </div>
+                    <div class="day__wrapper">
+                        <div class="day">Sat</div>
+                        <img class="week__img" src="icons/sun.png" alt="sunny">
+                        <div class="degrees">15°</div>
+                    </div>
+                    <div class="day__wrapper">
+                        <div class="day">Sun</div>
+                        <img class="week__img" src="icons/sun.png" alt="sunny">
+                        <div class="degrees">11°</div>
+                    </div>
+                </div>
+                <div class="today__subheading">Today's Highlights</div>
+                <div class="highlight__container">
+                    <div class="highlights__wrapper">
+                        <div class="highlights__subheading">Wind speed</div>
+                        <div class="highlights__body" id="Wind">7.70 km/h</div>
+                    </div>
+                    <div class="highlights__wrapper">
+                        <div class="highlights__subheading">Humidity</div>
+                        <div class="highlights__body" id="Humidity">12%</div>
+                    </div>
+                    <div class="highlights__wrapper">
+                        <div class="highlights__subheading">Visibility</div>
+                        <div class="highlights__body" id="Visibility">5.2 km</div>
+                    </div>
+                    <div class="highlights__wrapper">
+                        <div class="highlights__subheading">Pressure</div>
+                        <div class="highlights__body" id="Pressure">1008</div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+  
+
+
