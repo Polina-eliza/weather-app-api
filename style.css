@@ -309,8 +309,9 @@ a {
   font-size: 13px;
   text-align: center;
   margin-top: 20px;
+  color: var(--accent-font-color);
 }
 
 .author__link {
-  color: #68b4da;
+  color: var(--sidebar-color);
 }
