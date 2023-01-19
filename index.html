@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     
 </head>
@@ -19,25 +19,32 @@
                 <form class="input__form" id="search-form">
                     <input id="searchQueryInput" type="text" name="searchQueryInput" placeholder="Search for places" value="" >
                     <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit">
-                        <img class="input__img" src="icons/icons8-search-50.png" alt="">
+                        <img class="input__img" src="icons/search-icon.png" alt="">
+                    </button>
+                    <button class="btn__location" id="location">
+                        <img src="icons/location-pin.png" alt="location_icon">
                     </button>
                 </form>
-                <img class="main__img" src="icons/Group 4.png" alt="">
-                <h1 class="main__temperature" id="temperature" >12°C</h1>
+                <img class="main__img" src="icons/Sun.png" alt="sunny">
+
+
+                <h2 class="weather__descr" id="description">Cloudy</h2>
                 <h2 class="main__city" id="city">Rome</h2>
                 <div class="current__data">
                     <p class="current__day">Monday,</p>
                     <p class="current__time">16:00</p>
                 </div>
                 <hr>
-                <h2 class="weather__descr" id="description">Cloudy</h2>
+                <h1 class="main__temperature" id="temperature" >12°C</h1>
                 <div class="weather__container">
-                    <img class="weather__img" src="icons/icons8-temperature-64.png" alt="">
-                    <div class="sidebar__subheading" id="feels-like"><span class="sidebar__span" >Feels like:</span> 10°C</div>
+                    <img class="weather__img" src="icons/temperature-icon.png" alt="">
+                    <div class="sidebar__subheading" id="feels-like">Feels like: 10°C</div>
                 </div>
-                
             </div>
         </div>
+
+
+
         <div class="main">
             <div class="main__container">
                 <div class="header__container">
@@ -51,40 +58,41 @@
                         </button>
                     </div>
                 </div>
+
                 <div class="week__container">
                     <div class="day__wrapper">
                         <div class="day">Mon</div>
-                        <img class="week__img" src="icons/sun.png" alt="sunny">
+                        <img class="week__img" src="icons/cloudy.png" alt="sunny">
                         <div class="degrees">12°</div>
                     </div>
                     <div class="day__wrapper">
                         <div class="day">Tue</div>
-                        <img class="week__img" src="icons/sun.png" alt="sunny">
+                        <img class="week__img" src="icons/partly-cloudy-day.png" alt="sunny">
                         <div class="degrees">14°</div>
                     </div>
                     <div class="day__wrapper">
                         <div class="day">Wed</div>
-                        <img class="week__img" src="icons/clouds.png" alt="cloudy">
+                        <img class="week__img" src="icons/showers.png" alt="cloudy">
                         <div class="degrees">10°</div>
                     </div>
                     <div class="day__wrapper">
                         <div class="day">Thu</div>
-                        <img class="week__img" src="icons/bolt-isolated 2.png" alt="rainy">
+                        <img class="week__img" src="icons/Sun.png" alt="rainy">
                         <div class="degrees">12°</div>
                     </div>
                     <div class="day__wrapper">
                         <div class="day">Fri</div>
-                        <img class="week__img" src="icons/bolt-isolated 2.png" alt="rainy">
+                        <img class="week__img" src="icons/heavy-showers.png" alt="rainy">
                         <div class="degrees">14°</div>
                     </div>
                     <div class="day__wrapper">
                         <div class="day">Sat</div>
-                        <img class="week__img" src="icons/sun.png" alt="sunny">
+                        <img class="week__img" src="icons/Sun.png" alt="sunny">
                         <div class="degrees">15°</div>
                     </div>
                     <div class="day__wrapper">
                         <div class="day">Sun</div>
-                        <img class="week__img" src="icons/sun.png" alt="sunny">
+                        <img class="week__img" src="icons/partly-cloudy-day.png" alt="sunny">
                         <div class="degrees">11°</div>
                     </div>
                 </div>
