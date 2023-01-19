@@ -192,35 +192,26 @@ a {
 .btn__degrees {
     font-weight: 700;
     font-size: 13px;
-    color: #FCFCFD;
-    background: #0F0F10;
+    background: transparent;
+    border: 2px solid var(--sidebar-color);
     height: 26px;
     width: 26px;
     border-radius: 100%;
-    border: none;
-    margin-left: 14px;
+    margin-left: 8px;
     cursor: pointer;
 }
 
-.btn__degrees-f {
-    background: var(--sidebar-color);
-    color: #0F0F10;
-}
-
-.cel {
-    color: #FCFCFD;
-}
-
+.cel, 
 .fah {
-    color: #0F0F10;
+  color: var(--sidebar-color);
 }
-
 
 
 .header__container {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    
 }
 
 .week__container {
@@ -228,7 +219,6 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 }
 
 .day__wrapper {
@@ -236,6 +226,11 @@ a {
     border-radius: 10px;
     padding: 10px 17px;
     max-width: 72px;
+    transition: all 150ms ease-in-out;
+}
+
+.day__wrapper:hover {
+  transform: scale(1.1);
 }
 
 .day {
@@ -271,6 +266,11 @@ a {
     width: 248px;
     height: 95px;
     text-align: center;
+    transition: all 150ms ease-in-out;
+}
+
+.highlights__wrapper:hover {
+  transform: scale(1.1);
 }
 
 .highlights__subheading {
