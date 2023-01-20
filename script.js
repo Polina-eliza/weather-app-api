@@ -21,7 +21,7 @@ function displayWeatherCondition(response) {
   document.querySelector("#description").innerHTML = response.data.weather[0].description;
   document.querySelector("#Humidity").innerHTML = `${response.data.main.humidity}%`;
   document.querySelector("#Wind").innerHTML = `${Math.round(response.data.wind.speed)}km/h`;
-  document.querySelector("#feels-like").innerHTML = `Feels like: ${Math.round(response.data.main.feels_like) > 0 ? "+" : ""}${Math.round(response.data.main.feels_like)}`;
+  document.querySelector("#feels-like").innerHTML = `Feels like: ${Math.round(response.data.main.feels_like) > 0 ? "+" : ""}${Math.round(response.data.main.feels_like)}°C`;
   document.querySelector("#Visibility").innerHTML = `${response.data.visibility/1000}km`;
   document.querySelector("#Pressure").innerHTML = `${Math.round(response.data.main.pressure)}`;
   document.querySelector("#icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@4x.png`);
