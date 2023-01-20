@@ -41,6 +41,8 @@ function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#searchQueryInput").value;
   searchCity(city);
+  let searchInput = document.querySelector("#searchQueryInput");
+  searchInput.value = "";
 }
 
 
