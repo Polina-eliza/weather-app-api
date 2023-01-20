@@ -74,6 +74,10 @@ a {
     outline: none;
     transform: scale(1.5);
   }
+
+  .input__img {
+    transform: translateY(-1px);
+  }
   
   #searchQuerySubmit:hover {
     cursor: pointer;
