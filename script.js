@@ -13,7 +13,11 @@ let minutes = (now.getMinutes().toString()).padStart(2,'0');
 currentDay.innerHTML = `${day},`;
 currentTime.innerHTML = `${hours}:${minutes}`;
 
-function displayForecast() {
+
+
+
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Thu", "Fri", "Sat", "Sun"];
@@ -36,7 +40,6 @@ function displayForecast() {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
 };
 
 
@@ -147,93 +150,6 @@ fahrenheitButton.addEventListener('click', function() {
   }
 });
 
-// const celsiusButton = document.getElementById("celsius-button");
-// const fahrenheitButton = document.getElementById("fahrenheit-button");
-
-
-// celsiusButton.addEventListener('click', function() {
-// fahrenheitButton.classList.remove("active");
-// celsiusButton.classList.toggle("active");
-// });
-
-
-// fahrenheitButton.addEventListener('click', function() {
-// celsiusButton.classList.remove("active");
-// fahrenheitButton.classList.toggle("active");
-// });
 
 searchCity("Rome");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // Convert celsium to fahreinheit 
-
-
-// function displayFahrenheitTemperature(event) {
-//   event.preventDefault();
-//   let temperatureElement = document.querySelector("#temperature");
-  
-//   let celsiusButton = document.querySelector("#celsius-button");
-//   let fahrenheitButton = document.querySelector("#fahrenheit-button");
-
-//   celsiusButton.classList.remove("active");
-//   fahrenheitButton.classList.add("active");
-//   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-//   temperatureElement.innerHTML = `${Math.round(fahrenheitTemperature)}°F`;
-// }
-
-// function displayCelsiusTemperature(event) {
-//   event.preventDefault();
-//   let temperatureElement = document.querySelector("#temperature");
-  
-//   let celsiusButton = document.querySelector("#celsius-button");
-//   let fahrenheitButton = document.querySelector("#fahrenheit-button");
-
-//   celsiusButton.classList.add("active");
-//   fahrenheitButton.classList.remove("active");
-//   temperatureElement.innerHTML = `${Math.round(celsiusTemperature)}°C`;
-// }
-
-// let fahrenheitButton = document.querySelector("#fahrenheit-button");
-// fahrenheitButton.addEventListener("click", displayFahrenheitTemperature);
-
-// let celsiusButton = document.querySelector("#celsius-button");
-// celsiusButton.addEventListener("click", displayCelsiusTemperature);
-
-
-// // change the button color
-
-// let celsiusButtons = document.querySelector("#celsius-button");
-// let fahrenheitButtons = document.querySelector("#fahrenheit-button");
-
-// celsiusButtons.addEventListener("click", function(){
-//   celsiusButtons.classList.add("active");
-//   fahrenheitButtons.classList.remove("active");
-// });
-
-// fahrenheitButtons.addEventListener("click", function(){
-//   fahrenheitButtons.classList.add("active");
-//   celsiusButtons.classList.remove("active");
-// });
-
-// searchCity("Rome");
-
-
 
