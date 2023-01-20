@@ -13,31 +13,31 @@ let minutes = (now.getMinutes().toString()).padStart(2,'0');
 currentDay.innerHTML = `${day},`;
 currentTime.innerHTML = `${hours}:${minutes}`;
 
-// function displayForecast() {
-//   let forecastElement = document.querySelector("#forecast");
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
 
-//   let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  let days = ["Thu", "Fri", "Sat", "Sun"];
 
-//   let forecastHTML = `<div class="week__container">`;
-//   days.forEach(function (day) {
-//     forecastHTML =
-//     forecastHTML +
-//     `
-//     <div class="day__wrapper" id="forecast">
-//       <div class="day">${day}</div>
-//         <img class="week__img" src="http://openweathermap.org/img/wn/50d@2x.png" alt="">
-//       <div class="degrees">
-//     <span class="degrees__max">12°/</span>
-//     <span class="degrees__min">9°</span>
-//        </div>
-// </div>
-//   `;
-//   });
+  let forecastHTML = `<div class="week__container">`;
+  days.forEach(function (day) {
+    forecastHTML =
+    forecastHTML +
+    `
+    <div class="day__wrapper" id="forecast">
+      <div class="day">${day}</div>
+        <img class="week__img" src="http://openweathermap.org/img/wn/50d@2x.png" alt="">
+      <div class="degrees">
+    <span class="degrees__max">12°/</span>
+    <span class="degrees__min">9°</span>
+       </div>
+</div>
+  `;
+  });
 
-//   forecastHTML = forecastHTML + `</div>`;
-//   forecastElement.innerHTML = forecastHTML;
-//   console.log(forecastHTML);
-// };
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+};
 
 
 
@@ -100,14 +100,11 @@ currentLocationButton.addEventListener("click", getCurrentLocation);
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = `${Math.round(fahrenheitTemperature)}°F`;
 }
-
-
 
 function displayCelsiusTemperature(event) {
   event.preventDefault();
@@ -134,21 +131,36 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 const celsiusButton = document.getElementById("celsius-button");
 const fahrenheitButton = document.getElementById("fahrenheit-button");
 
+celsiusButton.classList.add("active");
 
 celsiusButton.addEventListener('click', function() {
-  
-  fahrenheitButton.classList.remove("active");
-  
-  celsiusButton.classList.toggle("active");
+  if (!celsiusButton.classList.contains("active")) {
+    fahrenheitButton.classList.remove("active");
+    celsiusButton.classList.add("active");
+  }
 });
-
 
 fahrenheitButton.addEventListener('click', function() {
-  
-  celsiusButton.classList.remove("active");
-
-  fahrenheitButton.classList.toggle("active");
+  if (!fahrenheitButton.classList.contains("active")) {
+    celsiusButton.classList.remove("active");
+    fahrenheitButton.classList.add("active");
+  }
 });
+
+// const celsiusButton = document.getElementById("celsius-button");
+// const fahrenheitButton = document.getElementById("fahrenheit-button");
+
+
+// celsiusButton.addEventListener('click', function() {
+// fahrenheitButton.classList.remove("active");
+// celsiusButton.classList.toggle("active");
+// });
+
+
+// fahrenheitButton.addEventListener('click', function() {
+// celsiusButton.classList.remove("active");
+// fahrenheitButton.classList.toggle("active");
+// });
 
 searchCity("Rome");
 
