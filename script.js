@@ -13,31 +13,31 @@ let minutes = (now.getMinutes().toString()).padStart(2,'0');
 currentDay.innerHTML = `${day},`;
 currentTime.innerHTML = `${hours}:${minutes}`;
 
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
+// function displayForecast() {
+//   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+//   let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-  let forecastHTML = `<div class="week__container">`;
-  days.forEach(function (day) {
-    forecastHTML =
-    forecastHTML +
-    `
-    <div class="day__wrapper" id="forecast">
-      <div class="day">${day}</div>
-        <img class="week__img" src="http://openweathermap.org/img/wn/50d@2x.png" alt="">
-      <div class="degrees">
-    <span class="degrees__max">12°/</span>
-    <span class="degrees__min">9°</span>
-       </div>
-</div>
-  `;
-  });
+//   let forecastHTML = `<div class="week__container">`;
+//   days.forEach(function (day) {
+//     forecastHTML =
+//     forecastHTML +
+//     `
+//     <div class="day__wrapper" id="forecast">
+//       <div class="day">${day}</div>
+//         <img class="week__img" src="http://openweathermap.org/img/wn/50d@2x.png" alt="">
+//       <div class="degrees">
+//     <span class="degrees__max">12°/</span>
+//     <span class="degrees__min">9°</span>
+//        </div>
+// </div>
+//   `;
+//   });
 
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
-};
+//   forecastHTML = forecastHTML + `</div>`;
+//   forecastElement.innerHTML = forecastHTML;
+//   console.log(forecastHTML);
+// };
 
 
 
@@ -56,7 +56,7 @@ function displayWeatherCondition(response) {
   document.querySelector("#icon").setAttribute("alt", response.data.weather[0].description);
 
   celsiusTemperature = response.data.main.temp;
-  document.querySelector("#celsius-link").classList.add("active");
+  // document.querySelector("#celsius-link").classList.add("active");
 }
 
 function searchCity(city) {
@@ -95,96 +95,133 @@ let currentLocationButton = document.querySelector("#button-location");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 
-
 // Convert celsium to fahreinheit 
-
-
-
-
-
-
 
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  
-  let celsiusButton = document.querySelector("#celsius-button");
-  let fahrenheitButton = document.querySelector("#fahrenheit-button");
 
-  celsiusButton.classList.remove("active");
-  fahrenheitButton.classList.add("active");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = `${Math.round(fahrenheitTemperature)}°F`;
 }
 
+
+
 function displayCelsiusTemperature(event) {
   event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let temperatureElement = document.querySelector("#temperature");
-  
-  let celsiusButton = document.querySelector("#celsius-button");
-  let fahrenheitButton = document.querySelector("#fahrenheit-button");
-
-  celsiusButton.classList.add("active");
-  fahrenheitButton.classList.remove("active");
   temperatureElement.innerHTML = `${Math.round(celsiusTemperature)}°C`;
 }
 
-let fahrenheitButton = document.querySelector("#fahrenheit-button");
-fahrenheitButton.addEventListener("click", displayFahrenheitTemperature);
+let celsiusTemperature = null;
 
-let celsiusButton = document.querySelector("#celsius-button");
-celsiusButton.addEventListener("click", displayCelsiusTemperature);
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+
+// change the button color
+
+const celsiusButton = document.getElementById("celsius-button");
+const fahrenheitButton = document.getElementById("fahrenheit-button");
+
+
+celsiusButton.addEventListener('click', function() {
+  
+  fahrenheitButton.classList.remove("active");
+  
+  celsiusButton.classList.toggle("active");
+});
+
+
+fahrenheitButton.addEventListener('click', function() {
+  
+  celsiusButton.classList.remove("active");
+
+  fahrenheitButton.classList.toggle("active");
+});
+
+searchCity("Rome");
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // Convert celsium to fahreinheit 
 
 
 // function displayFahrenheitTemperature(event) {
 //   event.preventDefault();
 //   let temperatureElement = document.querySelector("#temperature");
+  
+//   let celsiusButton = document.querySelector("#celsius-button");
+//   let fahrenheitButton = document.querySelector("#fahrenheit-button");
 
-//   celsiusLink.classList.remove("active");
-//   fahrenheitLink.classList.add("active");
+//   celsiusButton.classList.remove("active");
+//   fahrenheitButton.classList.add("active");
 //   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
 //   temperatureElement.innerHTML = `${Math.round(fahrenheitTemperature)}°F`;
 // }
 
 // function displayCelsiusTemperature(event) {
 //   event.preventDefault();
-//   celsiusLink.classList.add("active");
-//   fahrenheitLink.classList.remove("active");
 //   let temperatureElement = document.querySelector("#temperature");
+  
+//   let celsiusButton = document.querySelector("#celsius-button");
+//   let fahrenheitButton = document.querySelector("#fahrenheit-button");
+
+//   celsiusButton.classList.add("active");
+//   fahrenheitButton.classList.remove("active");
 //   temperatureElement.innerHTML = `${Math.round(celsiusTemperature)}°C`;
 // }
 
-// let celsiusTemperature = null;
+// let fahrenheitButton = document.querySelector("#fahrenheit-button");
+// fahrenheitButton.addEventListener("click", displayFahrenheitTemperature);
 
-// let searchForm = document.querySelector("#search-form");
-// searchForm.addEventListener("submit", handleSubmit);
-
-// let fahrenheitLink = document.querySelector("#fahrenheit-link");
-// fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
-
-// let celsiusLink = document.querySelector("#celsius-link");
-// celsiusLink.addEventListener("click", displayCelsiusTemperature);
+// let celsiusButton = document.querySelector("#celsius-button");
+// celsiusButton.addEventListener("click", displayCelsiusTemperature);
 
 
-// change the button color
+// // change the button color
 
-let celsiusButtons = document.querySelector("#celsius-button");
-let fahrenheitButtons = document.querySelector("#fahrenheit-button");
+// let celsiusButtons = document.querySelector("#celsius-button");
+// let fahrenheitButtons = document.querySelector("#fahrenheit-button");
 
-celsiusButtons.addEventListener("click", function(){
-  celsiusButtons.classList.add("active");
-  fahrenheitButtons.classList.remove("active");
-});
+// celsiusButtons.addEventListener("click", function(){
+//   celsiusButtons.classList.add("active");
+//   fahrenheitButtons.classList.remove("active");
+// });
 
-fahrenheitButtons.addEventListener("click", function(){
-  fahrenheitButtons.classList.add("active");
-  celsiusButtons.classList.remove("active");
-});
+// fahrenheitButtons.addEventListener("click", function(){
+//   fahrenheitButtons.classList.add("active");
+//   celsiusButtons.classList.remove("active");
+// });
 
-searchCity("Rome");
+// searchCity("Rome");
 
 
 
