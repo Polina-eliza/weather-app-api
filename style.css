@@ -66,19 +66,13 @@ a {
     font-size: 13px;
     box-shadow: 3px 4px 5px rgba(0, 0, 0, .3); 
   }
-
-  .input__img {
-    height: 14px;
-    width: 14px;
-  }
   
   #searchQuerySubmit {
-    width: 14px;
-    height: 14px;
     margin-left: -32px;
     background: none;
     border: none;
     outline: none;
+    transform: scale(1.5);
   }
   
   #searchQuerySubmit:hover {
@@ -88,12 +82,9 @@ a {
   .btn__location {
     border: none;
     background-color: transparent;
-  }
-
-  .btn__location img {
     width: 21px;
     height: 21px;
-    transform: translateX(30px);
+    transform: scale(2) translateX(15px);
     cursor: pointer;
   }
 
@@ -141,19 +132,10 @@ a {
     margin-top: 25px;
   }
 
-  .weather__container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .sidebar__subheading {
+   
     margin-top: 25px;
   }
-
-  .weather__img {
-    width: 20px;
-    display: block;
-    margin-right: 4px;
-  }
-
 
   hr {
     width: 195px;
@@ -201,10 +183,20 @@ a {
     cursor: pointer;
 }
 
-.cel, 
-.fah {
+.btn__degrees a {
   color: var(--sidebar-color);
 }
+
+.btn__degrees.active {
+  background: var(--sidebar-color);
+  color: #f3f1f1;
+  border: none;
+}
+
+.btn__degrees.active a {
+  color: var(--main-font-color);
+}
+
 
 
 .header__container {
@@ -227,6 +219,7 @@ a {
     padding: 10px 17px;
     max-width: 72px;
     transition: all 150ms ease-in-out;
+    box-shadow: 3px 4px 5px rgba(0, 0, 0, .3);    
 }
 
 .day__wrapper:hover {
@@ -267,6 +260,7 @@ a {
     height: 95px;
     text-align: center;
     transition: all 150ms ease-in-out;
+    box-shadow: 3px 4px 5px rgba(0, 0, 0, .3);    
 }
 
 .highlights__wrapper:hover {

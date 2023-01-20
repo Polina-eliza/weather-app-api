@@ -102,6 +102,26 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 
+// change the button color
+
+const celsiusButton = document.getElementById("celsius-button");
+const fahrenheitButton = document.getElementById("fahrenheit-button");
+
+
+celsiusButton.addEventListener('click', function() {
+  
+  fahrenheitButton.classList.remove("active");
+  
+  celsiusButton.classList.toggle("active");
+});
+
+
+fahrenheitButton.addEventListener('click', function() {
+  
+  celsiusButton.classList.remove("active");
+
+  fahrenheitButton.classList.toggle("active");
+});
 
 
 
