@@ -30,7 +30,7 @@ function formatDay(timestamp) {
   
     let forecastElement = document.querySelector("#forecast");
   
-    let forecastHTML = `<div class="weather__forecast" id="forecast">`;
+    let forecastHTML = ``;
     forecast.forEach(function (forecastDay, index) {
       if (index < 7) {
           forecastHTML =
