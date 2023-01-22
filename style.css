@@ -214,12 +214,15 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 11px;
 }
 
 .day__wrapper {
+    height: 120px;
+    width: 80px;
     background: var(--sidebar-color);
     border-radius: 10px;
-    padding: 10px 12px;
+    padding: 10px 6px;
     width: 72px;
     transition: all 150ms ease-in-out;
     box-shadow: 3px 4px 5px rgba(0, 0, 0, .3);    
@@ -253,7 +256,7 @@ a {
 .today__subheading {
     font-weight: 600;
     font-size: 13px;
-    margin: 30px 0 30px 0;
+    margin: 40px 0 30px 0;
     text-align: center;
     color: var(--accent-font-color);
 }
