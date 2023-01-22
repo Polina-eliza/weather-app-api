@@ -209,8 +209,8 @@ a {
     
 }
 
-.week__container {
-    margin-top: 83px;
+.weather__forecast {
+    margin-top: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
